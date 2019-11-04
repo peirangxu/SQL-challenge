@@ -85,14 +85,14 @@ SELECT * FROM salaries;
 DROP TABLE IF EXISTS titles;
 
 CREATE TABLE titles (
-	emp_no INT Not Null Primary Key,
+	emp_no INT Not Null,
 	FOREIGN KEY(emp_no) REFERENCES employees(emp_no),
 	title VARCHAR Not Null,
 	from_date DATE Not Null,
 	to_date DATE Not Null);
 
 COPY titles
-FROM '/Users/peirangxu/Desktop/USC-LA-DATA-PT-08-2019-U-C/09-SQL/Homework/data/salaries.csv'
+FROM '/Users/peirangxu/Desktop/USC-LA-DATA-PT-08-2019-U-C/09-SQL/Homework/data/titles.csv'
 DELIMITER ',' CSV HEADER;
 
 SELECT * FROM titles;
