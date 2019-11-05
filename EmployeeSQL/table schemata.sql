@@ -65,10 +65,15 @@ COPY employee_dept TO '/Users/peirangxu/Desktop/SQL-challenge/Output/employee_de
 DELIMITER ',' CSV HEADER;
 -----------------------------------------------------------------------------------------------------------------------------
 --List all employees whose first name is "Hercules" and last names begin with "B."
+DROP TABLE IF EXISTS Hercules_B_;
+
+CREATE TABLE Hercules_B_ AS
 SELECT last_name, first_name
 FROM employees
 WHERE first_name = 'Hercules' AND last_name like 'B%';
 
+COPY Hercules_B_ TO '/Users/peirangxu/Desktop/SQL-challenge/Output/Hercules_B_.csv' 
+DELIMITER ',' CSV HEADER;
 -----------------------------------------------------------------------------------------------------------------------------
 --List all employees in the Sales department, including their employee number, last name, first name, and department name
 DROP TABLE IF EXISTS employee_sales;
