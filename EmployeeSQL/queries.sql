@@ -7,7 +7,8 @@ COPY
 	salaries.salary
 FROM employees
 JOIN salaries ON
-employees.emp_no = salaries.emp_no)
+employees.emp_no = salaries.emp_no
+ORDER BY employees.emp_no)
 TO '/Users/peirangxu/Desktop/SQL-challenge/Output_CSV/employee_detail.csv' 
 DELIMITER ',' CSV HEADER;
 --------------------------------------------------------------------------------------------------------------
@@ -47,7 +48,8 @@ FROM departments
 JOIN dept_emp ON 
 	departments.dept_no = dept_emp.dept_no
 JOIN employees ON
-	dept_emp.emp_no = employees.emp_no)
+	dept_emp.emp_no = employees.emp_no
+ORDER BY employees.emp_no)
 TO '/Users/peirangxu/Desktop/SQL-challenge/Output_CSV/employee_dept.csv' 
 DELIMITER ',' CSV HEADER;
 -----------------------------------------------------------------------------------------------------------------------------
